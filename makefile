@@ -8,5 +8,7 @@ endian.o: endian.c major1.h
 	gcc -c endian.c
 clz.o: clz.c major1.h
 	gcc -c clz.c
+rotate.o: rotate.c major1.h
+  gcc -c rotate.c
 clean:
 	rm *.o
