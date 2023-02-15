@@ -6,3 +6,4 @@
 void clz();
 void endian_swap();
 void parity();
+void rotate();
