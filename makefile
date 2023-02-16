@@ -1,4 +1,4 @@
-bitwisemenu: major1.o clz.o endian.o parity.o
+bitwisemenu: major1.o clz.o endian.o parity.o rotate.o
 	gcc major1.o clz.o endian.o parity.o rotate.o -o bitwisemenu
 major1.o: major1.c major1.h
 	gcc -c major1.c
