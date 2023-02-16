@@ -1,7 +1,8 @@
 //Dewey Holland Dah0318 Spring2023 CSCE3600
 
-#include "major1.h
+#include "major1.h"
 
+/*
 int main(){
 	printf("Enter your input value");
 	int user_input;
@@ -10,8 +11,15 @@ int main(){
 	printf("Your input value is: %d\n", user_input); //test
 	Parity(user_input);
 }
+*/
 
-int Parity(unsigned int input){
+void parity(unsigned int input){
+
+	printf("Enter a 32-bit number (>= 1 and <= 4294967295, inclusively): ");
+	int user_input;
+	int *p = &user_input;
+	scanf("%d",p);
+ 
 	unsigned int binary[8]; 
 	unsigned int parityCheck = 0;
 	for(int i = 0; i<=7; i++){
@@ -20,11 +28,9 @@ int Parity(unsigned int input){
 		parityCheck = parityCheck ^ binary[i];
 	}
 	if(parityCheck == 0){
-		printf("Your input value has an even parity.\n");
-		return 0;
+		printf("Parity of the input value is : 0 \n");
 	}
 	else{
-		printf("Your input value has an odd parity.\n");
-		return 1;
+		printf("Parity of the input value is : 1 \n");
 	}
 }
