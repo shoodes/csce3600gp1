@@ -1,4 +1,4 @@
-int Parity(unsigned int input);
+
 
 #include "major1.h
 
