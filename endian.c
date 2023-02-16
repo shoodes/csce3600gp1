@@ -1,22 +1,40 @@
-//Douglas Parks, DIP0013
 #include <stdio.h>
 
+// Define bit number to later use in the int swap
+#define B0 0
+#define B1 1
+#define B2 2
+#define B3 3
 
-//The following function with do the swap of the numbers and return the new values
-//NOTE: This only works with an input of 4 integers
-//If a 5th is inputted, it will not be outputted
+//This swap will swap the bit 0 and 3 and then bit 1 and B2
 
-void endian_swap (unsigned char *value)
-{
-  unsigned char tmp;
+int swap(int number) {
+	
 
-	//Uses a temp value to swap
-  tmp = value[0];
-  value[0] = value[3];
-  value[3] = tmp;
+    char *num = (char*)(&number);
 
-	//Same process, but with 1 and 2
-  tmp = value[1];
-  value[1] = value[2];
-  value[2] = tmp;
+
+    num[B0] = num[B0] ^ num[B3];
+    num[B3] = num[B0] ^ num[B3];
+    num[B0] = num[B0] ^ num[B3];
+
+
+    num[B1] = num[B1] ^ num[B2];
+    num[B2] = num[B1] ^ num[B2];
+    num[B1] = num[B1] ^ num[B2];
+
+    return number;
+}
+
+int endian() {
+    int num;
+    int num_done;
+
+    printf("Enter a 32-bit number (>= 1 and <= 4294967295, inclusively): ");
+    scanf("%d", &num);
+    
+    num_done = swap(num);
+    
+    printf("Endian swap of %d gives %d\n", num, num_after_endian_swap);
+    return 0;
 }
