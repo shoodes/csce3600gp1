@@ -30,7 +30,7 @@ int main()
 			}
 			case 3:
       {
-        rotate right
+        			rotate();
 				break;
       }
 			case 4:
